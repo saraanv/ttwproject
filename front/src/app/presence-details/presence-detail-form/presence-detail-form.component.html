@@ -1,0 +1,36 @@
+<form #form= "ngForm" (submit)="onSubmit(form)" [class.submitted]= "service.formSubmitted" novalidate autocomplete="off">
+
+    <input type="hidden" name="presenceId" [value]="service.formData.presenceId">
+    <div class = "mb-3">
+        <label>Presence Date</label>
+        <input class="form-control form-control-lg"
+        placeholder="Presence Date:"
+        #date="ngModel"name="date" 
+        [(ngModel)]="service.formData.date"    
+        required   >
+    </div>
+
+    <div class = "mb-3">
+        <label>Presence Arrival</label>
+        <input class="form-control form-control-lg"
+        placeholder="Presence Arrived At:"
+        #arrival="ngModel"name="arrival" 
+        [(ngModel)]="service.formData.arrival"    
+        required   >
+    </div>
+
+    <div class = "mb-3">
+        <label>Presence Exit</label>
+        <input class="form-control form-control-lg"
+        placeholder="Presence Exited At:"
+        #exit="ngModel"name="exit" 
+        [(ngModel)]="service.formData.exit"   
+        required    >
+    </div>
+
+    <div class="d-grid">
+    <button class ="btn btn-lg btn-success" type="submit">
+        Submit
+    </button>
+    </div>
+</form>
